@@ -7,8 +7,10 @@ import Router from './Router';
 // Reducers
 import reducers from './reducers';
 
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
 const App = () => (
-  <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
+  <Provider store={store}>
     <Router />
   </Provider>
 );
