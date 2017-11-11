@@ -13,7 +13,7 @@ class JogoDetalhe extends Component {
   }
 
   renderRow = (item) => {
-    console.log();
+    // console.log(item);
     return(
       <View style={{
         flexDirection: 'row', padding: 15
@@ -25,12 +25,15 @@ class JogoDetalhe extends Component {
     )
   }
 
+  _keyExtractor = (item, index) => item.id;
+
   render() {
     console.log(this.props);
     const { detalhe, mensagens } = this.props;
     return (
       <FlatList 
         style={{ flex: 1 }}
+        keyExtractor={this._keyExtractor}
         // ListHeaderComponent={this.renderHeader(jogos)}
         data={mensagens}
         renderItem={this.renderRow}

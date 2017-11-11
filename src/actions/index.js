@@ -1,22 +1,23 @@
+import _ from 'lodash';
 import axios from 'axios';
 import { Actions } from 'react-native-router-flux'; 
 import { 
   FETCH_JOGOS, 
   SET_REFRESH,
   FETCH_DETAIL,
-  FETCH_MENSAGENS 
+  FETCH_MENSAGENS,
+  OPEN_CLOSE_MODAL,
+  SET_FILTERS
 } from './types';
 
 const URL = 'http://globoesporte.globo.com/temporeal/futebol/central.json';
 
 export const fetchJogos = () => async dispatch => {
   const req = await axios.get(URL);
-  dispatch({ type: FETCH_JOGOS, payload: req.data });
+  const jogos = req.data;
+  const campeonatos = _.map(jogos.jogos, jg => jg.nome_campeonato );
+  dispatch({ type: FETCH_JOGOS, payload: jogos, campeonatos });
 }
-
-// export const onRefresh = () => dispatch => {
-//   dispatch({ type: SET_REFRESH, payload: true });
-// }
 
 export const goDetail = jogo => async dispatch => {
   const req = await axios.get(jogo.url + '/transmissao.json');
@@ -28,4 +29,16 @@ export const goDetail = jogo => async dispatch => {
 export const fetchMensagens = url => async dispatch => {
   const req = await axios.get(url + '/mensagens.json');
   dispatch({ type: FETCH_MENSAGENS, payload: req.data });
+}
+
+export const openModal = flag => dispatch => {
+  dispatch({ type: OPEN_CLOSE_MODAL, payload: flag });
+}
+
+export const setFilters = filters => dispatch => {
+  dispatch({ type: SET_FILTERS, payload: filters, id: filters.id });
+}
+
+export const changeRefresh = () => dispatch => {
+  dispatch({ type: SET_REFRESH });
 }

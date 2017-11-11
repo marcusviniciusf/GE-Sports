@@ -4,10 +4,11 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 // Router
 import Router from './Router';
-// Reducers
-import reducers from './reducers';
+// Store
+import store from './store';
+// import reducers from './reducers';
 
-const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+// const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 const App = () => (
   <Provider store={store}>

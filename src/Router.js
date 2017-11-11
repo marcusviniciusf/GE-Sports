@@ -2,12 +2,11 @@ import React from 'react';
 import { Router, Scene, Stack } from 'react-native-router-flux';
 import { Image } from 'react-native';
 // Common
-import LeftRightButtons from './components/LeftRightButtons';
+import Title from './components/common/Title';
+import LeftRightButtons from './components/common/LeftRightButtons';
 // Components
 import JogosList from './components/JogosList';
 import JogoDetalhe from './components/JogoDetalhe';
-
-const logo = require('./assets/globoesporte.png');
 
 const RouterComponent = () => (
   <Router>
@@ -17,13 +16,12 @@ const RouterComponent = () => (
         initial
         renderLeftButton={<LeftRightButtons button={'left'} />}
         renderRightButton={<LeftRightButtons button={'right'} />}
-        navigationBarTitleImage={logo} 
+        renderTitle={<Title />}
         component={JogosList} 
-        navigationBarTitleImageStyle={{ resizeMode: 'contain', height: 40, flex: 1 }}
       />
       <Scene 
         key='jogoDetalhe'
-        title=''
+        title='Jogo'
         component={JogoDetalhe}
       />
     </Stack>

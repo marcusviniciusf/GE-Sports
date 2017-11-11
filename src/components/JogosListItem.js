@@ -7,8 +7,8 @@ const JogosListItem = ({ item, onPress }) => {
     switch (status) {
       case 'Em Andamento':
         return <Text style={styles.statusText}>ACOMPANHE AO VIVO</Text>;
-      case 'encerrado':
-        return <Text style={styles.statusText}>ENCERRADO</Text>;
+      case 'Encerrada':
+        return <Text style={[styles.statusText, { color: '#c62828' }]}>ENCERRADO</Text>;
       default:
         return null
     };
