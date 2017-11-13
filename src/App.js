@@ -6,9 +6,6 @@ import ReduxThunk from 'redux-thunk';
 import Router from './Router';
 // Store
 import store from './store';
-// import reducers from './reducers';
-
-// const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 const App = () => (
   <Provider store={store}>

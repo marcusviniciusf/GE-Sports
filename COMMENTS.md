@@ -7,3 +7,12 @@
 ## Reflexões sobre o aplicativo e sugestões de melhoria
 
 * Na minha opinião, não vejo necessidade da Api retornar a elemento "data_hoje" na url principal, visto que todos os jogos já são do dia tual.
+
+
+## Todo:
+1. Verificar se o campo do placar existir, se não existir === 0x0
+2. Navigation Logo no Android
+3. Configurar Redux-Offilne
+4. Fazer Menu Configurações AsyncStorage
+5. Componetizar Modal e Ajustar tamanho para Android
+6. Fazer Testes
