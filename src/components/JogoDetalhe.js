@@ -6,74 +6,74 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import JogoDetalheItem from './JogoDetalheItem';
 
+// Detalhe do jogo, lance a lance
 class JogoDetalhe extends Component {
+  
   componentDidMount() {
     this.props.fetchMensagens(this.props.detalhesJogo.url);
-    TimerMixin.setInterval(() => {
-      this.props.fetchMensagens(this.props.detalhesJogo.url);
-    }, 50000);
+    TimerMixin.setInterval(() => { this.props.fetchMensagens(this.props.detalhesJogo.url);}, 50000);
   }
 
-  _onRefresh = async () => {
-    await this.props.changeRefresh();
-    await this.props.fetchMensagens(this.props.detalhesJogo.url);
+  // Pull to Refresh
+  _onRefresh = () => {
+    this.props.changeRefresh();
+    this.props.fetchMensagens(this.props.detalhesJogo.url);
   };
 
+  // ListItem, fazendo switch case para cada lance em especifico
   renderRow = ({ item }) => {
     const { operacao, tipo } = item;
+    const jogoDetItem = (tipo) => <JogoDetalheItem item={item} detalhesJogo={this.props.detalhesJogo} tipo={tipo}/>;
     if (operacao === 'INCLUSAO') {
       switch (tipo) {
         case 'LANCE_GOL':
-          return <JogoDetalheItem item={item} detalhesJogo={this.props.detalhesJogo} tipo={1} />;
+          return jogoDetItem(1);
         case 'LANCE_SUBSTITUICAO':
-          return <JogoDetalheItem item={item} detalhesJogo={this.props.detalhesJogo} tipo={2} />;
+          return jogoDetItem(2);
         case 'LANCE_CARTAO':
-          return <JogoDetalheItem item={item} detalhesJogo={this.props.detalhesJogo} tipo={3} />;
+          return jogoDetItem(3);
         default:
           break;
       }
     }
   };
 
-  renderHeader(trans, msgs) {
-    // console.log(trans);
+  // Header da lista(flatList)
+  renderHeader(trans, msgs, detalhes) {
     if (trans) {
-      let gols = null;
-      _.forEachRight(msgs, msg => { if (msg.jogo.placar_visitante) { return gols = msg } });
-        return (
-          <View style={styles.headerContainer}>
-            <View style={styles.headerPlacarView}>
-              <Image source={{ uri: this.props.detalhesJogo.time_casa.escudo }} style={styles.headerEscudoImg} />
-              <Text style={styles.headerGolsTxt}>
-              </Text>
-              <Text>x</Text>
-              <Text style={styles.headerGolsTxt}>
-              </Text>
-              <Image source={{ uri: this.props.detalhesJogo.time_visitante.escudo }} style={styles.headerEscudoImg} />
-            </View>
-            <View style={styles.headerLegendaView}>
-              <Text style={styles.headerLegendaTxt}>
-                {trans.edicao_slug
-                  .split('-')
-                  .join(' ')
-                  .toUpperCase()}
-              </Text>
-              {trans.rodada_num ? <Text style={styles.headerLegendaTxt}>{trans.rodada_num}ª RODADA</Text> : null}
-            </View>
+      return (
+        <View style={styles.headerContainer}>
+          <View style={styles.headerPlacarView}>
+            <Image source={{ uri: detalhes.time_casa.escudo }} style={styles.headerEscudoImg} />
+            <Text style={styles.headerGolsTxt}>{detalhes.time_casa.placar}</Text>
+            <Text>x</Text>
+            <Text style={styles.headerGolsTxt}>{detalhes.time_visitante.placar}</Text>
+            <Image source={{ uri: detalhes.time_visitante.escudo }} style={styles.headerEscudoImg} />
           </View>
-        );
+          <View style={styles.headerLegendaView}>
+            <Text style={styles.headerLegendaTxt}>
+              {trans.edicao_slug
+                .split('-')
+                .join(' ')
+                .toUpperCase()}
+            </Text>
+            {trans.rodada_num ? <Text style={styles.headerLegendaTxt}>{trans.rodada_num}ª RODADA</Text> : null}
+          </View>
+        </View>
+      );
     }
   }
 
+  // Detalhe é o json transmissao, mensagens idem e recebe via props da classe pai a o detalhesJogo
   render() {
     const { transmissao } = this.props.detalhe;
-    const { mensagens } = this.props;
+    const { mensagens, detalhesJogo } = this.props;
     return (
       <View style={styles.mainContainer}>
         <FlatList
           style={{ flex: 1 }}
           keyExtractor={(item, index) => index}
-          ListHeaderComponent={this.renderHeader(transmissao, mensagens)}
+          ListHeaderComponent={this.renderHeader(transmissao, mensagens, detalhesJogo)}
           data={mensagens}
           renderItem={this.renderRow}
           contentContainerStyle={styles.flatListContainer}

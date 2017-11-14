@@ -9,7 +9,7 @@ import JogosList from './components/JogosList';
 import JogoDetalhe from './components/JogoDetalhe';
 
 const RouterComponent = () => (
-  <Router>
+  <Router tintColor={'#47a721'}>
     <Stack key="root">
       <Scene 
         key="jogosList" 
@@ -19,7 +19,7 @@ const RouterComponent = () => (
         renderTitle={<Title />}
         component={JogosList} 
       />
-      <Scene 
+      <Scene
         key='jogoDetalhe'
         title='Jogo'
         component={JogoDetalhe}

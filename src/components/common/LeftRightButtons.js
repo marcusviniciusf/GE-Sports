@@ -17,11 +17,11 @@ const LeftRightButtons = ({ button, openModal }) =>  {
   const renderButtons = button => {
     if (button === 'left') {
       return (
-        <Button btn={leftButton} onPress={() => openModal(true)}/>
+        <Button btn={leftButton} onPress={() => openModal({ flag: true, tipo: 1 })}/>
       );
     } 
     return (
-      <Button btn={rightButton} onPress={() => openModal(true)}/>
+      <Button btn={rightButton} onPress={() => openModal({ flag: true, tipo: 2 })}/>
     );
   } 
   return (

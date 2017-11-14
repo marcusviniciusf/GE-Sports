@@ -1,5 +1,9 @@
 import _ from 'lodash';
 
+export const verifyNetToRun = () => {
+  
+}
+
 export const filterJogos = (jogos, filters) => {
   const pValue = filters[1].pickerValue;
   const sValue = filters[2].switchValue;

@@ -4,7 +4,9 @@ import { View, TouchableHighlight, Text, StyleSheet, Platform, Switch, Picker } 
 import { connect } from 'react-redux';
 import Modal from 'react-native-modalbox';
 
-const ModalComponent = ({ campeonatos, filters, jogos, modalOpen, setFilter, openCloseModal }) => {
+// Componente Modal, são 2 modais = configurações e filtro
+const ModalComponent = props => {
+  const { campeonatos, filters, jogos, modalOpen, setFilter, openCloseModal, modalTipo, setWifi, wifiState } = props;
   const renderPicker = (jogos, filter) => {
     if (jogos) {
       let newOptions = _.orderBy(_.uniq(campeonatos), s => s.charCodeAt() * -1).reverse();
@@ -20,29 +22,53 @@ const ModalComponent = ({ campeonatos, filters, jogos, modalOpen, setFilter, ope
       );
     }
   };
-  return (
-    <Modal
-      style={styles.modalView}
-      onClosed={() => openCloseModal(false)}
-      isOpen={modalOpen}
-      position={'center'}
-      backdropPressToClose
-    >
-      <View>
-        <Text>Filtrar por Campeonato:</Text>
-        {renderPicker(jogos, filters)}
-        <View style={styles.filterView}>
-          <Text>Ordenar por hora de jogo:</Text>
-          <Switch value={filters[2].switchValue} onValueChange={e => setFilter({ id: 2, switchValue: e })} />
-        </View>
-        <TouchableHighlight onPress={() => openCloseModal(false)} underlayColor={'transparent'}>
-          <View style={styles.buttonVoltar}>
-            <Text style={styles.buttonVoltarTxt}>VOLTAR</Text>
+  if(modalTipo === 1) {
+    return (
+      <Modal
+        style={styles.modalView}
+        onClosed={() => openCloseModal({ flag: false, tipo: 1 })}
+        isOpen={modalOpen}
+        position={'center'}
+        backdropPressToClose
+      >
+        <View>
+          <Text>Filtrar por Campeonato:</Text>
+          {renderPicker(jogos, filters)}
+          <View style={styles.filterView}>
+            <Text>Ordenar por hora de jogo:</Text>
+            <Switch value={filters[2].switchValue} onValueChange={e => setFilter({ id: 2, switchValue: e })} />
           </View>
-        </TouchableHighlight>
-      </View>
-    </Modal>
-  );
+          <TouchableHighlight onPress={() => openCloseModal({ flag: false, tipo: 1 })} underlayColor={'transparent'}>
+            <View style={styles.buttonVoltar}>
+              <Text style={styles.buttonVoltarTxt}>VOLTAR</Text>
+            </View>
+          </TouchableHighlight>
+        </View>
+      </Modal>
+    );
+  } else {
+    return (
+      <Modal
+        style={[styles.modalView, { height: 100, padding: 15 }]}
+        onClosed={() => openCloseModal({ flag: false, tipo: 2 })}
+        isOpen={modalOpen}
+        position={'center'}
+        backdropPressToClose
+      >
+        <View>
+          <View style={[styles.filterView]}>
+            <Text>Somente com Wi-Fi disponivel?</Text>
+            <Switch value={wifiState} onValueChange={e => setWifi(e)} />
+          </View>
+          <TouchableHighlight onPress={() => openCloseModal({ flag: false, tipo: 2 })} underlayColor={'transparent'}>
+            <View style={styles.buttonVoltar}>
+              <Text style={styles.buttonVoltarTxt}>VOLTAR</Text>
+            </View>
+          </TouchableHighlight>
+        </View>
+      </Modal>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
@@ -55,7 +81,8 @@ const styles = StyleSheet.create({
   filterView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 15
+    marginBottom: 15,
+    alignItems: 'center'
   },
   pickerView: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15 },
   buttonVoltar: {
@@ -68,8 +95,8 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps({ jogosReducer }) {
-  const { filters, campeonatos, modalOpen } = jogosReducer;
-  return { filters, campeonatos, modalOpen };
+  const { filters, campeonatos, modalOpen, modalTipo } = jogosReducer;
+  return { filters, campeonatos, modalOpen, modalTipo };
 }
 
 export default connect(mapStateToProps, null)(ModalComponent);

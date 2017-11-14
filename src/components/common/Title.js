@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native'
 
+// Titulo da barra de navegação
 const Title = () => {
   const { imgStyle, container } = styles;
   return (

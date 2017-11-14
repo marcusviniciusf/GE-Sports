@@ -6,6 +6,7 @@ import GlobalStyles from '../assets/styles';
 const golImg = require('../assets/gol.png');
 const substituicaoImg = require('../assets/substituicao.png');
 
+// Parte lateral que informa o minuto atual do jogo assim como seu tempo
 const HeaderItem = ({ momento, periodo, children }) => {
   return (
     <View style={styles.headerContainer}>
@@ -20,6 +21,7 @@ const HeaderItem = ({ momento, periodo, children }) => {
   )
 }
 
+// Faz uma verificação para achar o escudo do time
 const imgTime = (time, detalhesJogo) => {
   if(time === detalhesJogo.time_casa.nome) {
     return detalhesJogo.time_casa.escudo;
@@ -29,13 +31,18 @@ const imgTime = (time, detalhesJogo) => {
 };
 
 const JogoDetalheItem = ({ item, detalhesJogo, tipo }) => {
+  // Função para checar se existe o campo no objecto
+  const exists = (variable) => {
+    if (variable) { return variable; }
+    return undefined;
+  }
   const { operacao, nome_time, gol, jogo, periodo, momento, substituicao, cartao } = item;
   switch (tipo) {
     case 1:
       return ( 
         <HeaderItem momento={momento} periodo={periodo}>
           <View style={styles.golView}>
-            <Image source={{ uri: gol.foto }} style={[styles.golJogadorImg]}/>
+            <Image source={{ uri: exists(gol.foto) }} style={[styles.golJogadorImg]}/>
             <Image source={{ uri: imgTime(nome_time, detalhesJogo) }} style={styles.golEscudoImg} />
             <View style={GlobalStyles.justifyCenter}>
               <Text style={styles.golNomeJogador}>{gol.autor}</Text>
@@ -44,7 +51,7 @@ const JogoDetalheItem = ({ item, detalhesJogo, tipo }) => {
           </View>
           <View style={styles.golViewContent}>
             <Text style={styles.golTxt}>
-              GOOLL DO {nome_time.toUpperCase()}!!
+              GOOL DO(A) {nome_time.toUpperCase()}!!
             </Text>
           </View>
         </HeaderItem>
@@ -56,7 +63,7 @@ const JogoDetalheItem = ({ item, detalhesJogo, tipo }) => {
             <View style={GlobalStyles.rowBetween}>
               <View style={GlobalStyles.row}>
                 <Image 
-                  source={{uri : substituicao.foto ? substituicao.foto : undefined}} 
+                  source={{uri : exists(substituicao.foto)}} 
                   style={[styles.substituicaoImg, styles.substituidoOpacity]}
                 />
                 <View style={GlobalStyles.justifyCenter}>
@@ -75,7 +82,7 @@ const JogoDetalheItem = ({ item, detalhesJogo, tipo }) => {
             <View style={GlobalStyles.rowBetween}>
               <View style={GlobalStyles.row}>
                 <Image 
-                  source={{uri : substituicao.substituido_por.foto ? substituicao.substituido_por.foto : undefined }} 
+                  source={{uri : exists(substituicao.substituido_por.foto)}} 
                   style={styles.substituicaoImg}
                 />
                 <View style={GlobalStyles.justifyCenter}>
@@ -94,7 +101,7 @@ const JogoDetalheItem = ({ item, detalhesJogo, tipo }) => {
           <View style={GlobalStyles.rowACenter}>
             <View style={[styles.cartaoViewColor, { backgroundColor: cartao.tipo == 'A' ? '#f5c30b' : '#fb0009' }]}/>
             <View style={GlobalStyles.rowCentered}>
-              <Image source={{ uri: cartao.foto }} style={styles.cartaoImgJogador}/>
+              <Image source={{ uri: exists(cartao.foto) }} style={styles.cartaoImgJogador}/>
               <Image source={{ uri: imgTime(nome_time, detalhesJogo) }} style={styles.cartaoImgTime} />
               <View style={{ marginLeft: 5 }}>
                 <Text style={styles.golNomeJogador}>{cartao.nome_jogador}</Text>

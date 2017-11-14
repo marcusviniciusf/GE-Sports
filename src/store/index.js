@@ -1,17 +1,16 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
-import { AsyncStorage } from 'react-native';
+import { offline } from '@redux-offline/redux-offline';
+import offlineConfig from '@redux-offline/redux-offline/lib/defaults';
 import reducers from '../reducers';
 
 const store = createStore(
   reducers,
   {},
   compose(
-    applyMiddleware(reduxThunk)
-    // autoRehydrate()
+    applyMiddleware(reduxThunk),
+    offline(offlineConfig)
   )
 );
-
-// persistStore(store, { storage: AsyncStorage, whiteList: ['likedJobs'] });
 
 export default store;

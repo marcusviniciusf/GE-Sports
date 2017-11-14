@@ -7,6 +7,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"@redux-offline/redux-offline": "^2.2.0",
 		"axios": "^0.17.0",
 		"lodash": "^4.17.4",
 		"react": "16.0.0",
@@ -16,7 +17,6 @@
 		"react-redux": "^5.0.6",
 		"react-timer-mixin": "^0.13.3",
 		"redux": "^3.7.2",
-		"redux-persist": "^5.2.2",
 		"redux-thunk": "^2.2.0"
 	},
 	"devDependencies": {

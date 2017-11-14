@@ -3,6 +3,8 @@
 * Optei por usar imagens, que estão localizadas na pasta src/assets/ a fim de não utilizar o plugin react-native-vector-icos, visto que usaria poucas imagens.
 * Modifiquei o arquivo info.plist na pasta ios/desafioGlobo/ a fim de liberar/permitir requisições fora do dominio localhost.
 * Optei por usar o plugin ModalBox por ser de simples e de fácil uso. 
+* Optei por usar o Redux-Offline ao invés do Redux-Persist pelo motivo dele abranger mais coisas, e dar mais informações e configurações.
+* Ao setar para checked a config "Somente com Wi-fi disponivel?", a ideia original era, se o usuário estivesse sem o wifi, aparecesse um alerta obrigando-o a fechar o aplicativo, porém o BackHandler não funciona no iOS, eu iria ter que criar um método no nativo, porém achei que não iria se encaixar, por isso criei um banner indicativo.
 
 ## Reflexões sobre o aplicativo e sugestões de melhoria
 
@@ -10,9 +12,4 @@
 
 
 ## Todo:
-1. Verificar se o campo do placar existir, se não existir === 0x0
-2. Navigation Logo no Android
-3. Configurar Redux-Offilne
-4. Fazer Menu Configurações AsyncStorage
-5. Componetizar Modal e Ajustar tamanho para Android
-6. Fazer Testes
+1. Terminar Testes
