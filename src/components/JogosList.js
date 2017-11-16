@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
 })
 
 function mapStateToProps({ jogosReducer }) {
+  console.log(jogosReducer);
   const { networkStatus, jogos, modalOpen, filters, campeonatos, refresh } = jogosReducer;
   return {
     networkStatus,

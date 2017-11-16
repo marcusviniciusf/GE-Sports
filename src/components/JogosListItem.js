@@ -1,24 +1,21 @@
 import React from 'react';
-import { View, Text, TouchableHighlight, StyleSheet, Image} from 'react-native';
+import { View, Text, TouchableHighlight, StyleSheet, Image } from 'react-native';
 
 const JogosListItem = ({ item, onPress }) => {
   const { status, time_casa, time_visitante, hora, localizacao, fase_rodada, nome_campeonato, url } = item;
-  const renderStatus = (status) => {
+  const renderStatus = status => {
     switch (status) {
       case 'Em Andamento':
         return <Text style={styles.statusText}>ACOMPANHE AO VIVO</Text>;
       case 'Encerrada':
         return <Text style={[styles.statusText, { color: '#c62828' }]}>ENCERRADO</Text>;
       default:
-        return null
-    };
+        return null;
+    }
   };
+  console.log(item);
   return (
-    <TouchableHighlight 
-      style={styles.buttonContainer}
-      onPress={() => onPress(item)} 
-      underlayColor={'#e3e3e3'}
-    >
+    <TouchableHighlight style={styles.buttonContainer} onPress={() => onPress(item)} underlayColor={'#e3e3e3'}>
       <View style={styles.container}>
         <Text style={styles.nomeCampeonato}>{nome_campeonato}</Text>
         <View style={styles.placarView}>
@@ -38,13 +35,15 @@ const JogosListItem = ({ item, onPress }) => {
           {renderStatus(status)}
         </View>
         <View style={styles.legendaView}>
-          <Text style={styles.legendaTxt}>{localizacao.toUpperCase()}</Text>
+          <Text style={styles.legendaTxt}>
+            {localizacao ? localizacao.toUpperCase() : 'Sem informações da localização'}
+          </Text>
           <Text style={styles.legendaTxt}>{hora}</Text>
         </View>
       </View>
     </TouchableHighlight>
   );
-}
+};
 
 const styles = StyleSheet.create({
   buttonContainer: {
@@ -56,33 +55,33 @@ const styles = StyleSheet.create({
   },
   container: { paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10 },
   nomeCampeonato: { alignSelf: 'center', fontSize: 10, color: '#757575', marginBottom: 5 },
-  placarView: { 
+  placarView: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'center', 
-    position: 'relative' 
+    alignItems: 'center',
+    position: 'relative'
   },
   placarImg: { height: 30, width: 30 },
   placarSiglaTxt: { fontWeight: '400', marginTop: 5 },
-  placarResultadoView: { 
-    flexDirection: 'row', 
-    alignItems: 'center', 
-    justifyContent: 'space-around', 
-    flex: 1 
+  placarResultadoView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flex: 1
   },
   placarResultadoTxt: { fontSize: 25, fontWeight: 'bold' },
-  statusText: { 
-    position: 'absolute', 
-    fontSize: 10, 
-    color: '#3b9c00', 
-    left: 0, 
+  statusText: {
+    position: 'absolute',
+    fontSize: 10,
+    color: '#3b9c00',
+    left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'transparent', 
-    textAlign: 'center',
+    backgroundColor: 'transparent',
+    textAlign: 'center'
   },
   legendaView: { alignItems: 'center', marginTop: 10 },
   legendaTxt: { fontSize: 10, color: '#757575' }
-})
+});
 
 export default JogosListItem;
