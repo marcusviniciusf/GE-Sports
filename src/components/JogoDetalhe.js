@@ -45,9 +45,9 @@ class JogoDetalhe extends Component {
         <View style={styles.headerContainer}>
           <View style={styles.headerPlacarView}>
             <Image source={{ uri: detalhes.time_casa.escudo }} style={styles.headerEscudoImg} />
-            <Text style={styles.headerGolsTxt}>{detalhes.time_casa.placar}</Text>
+            <Text style={styles.headerGolsTxt}>{this.props.gols.mandante}</Text>
             <Text>x</Text>
-            <Text style={styles.headerGolsTxt}>{detalhes.time_visitante.placar}</Text>
+            <Text style={styles.headerGolsTxt}>{this.props.gols.visitante}</Text>
             <Image source={{ uri: detalhes.time_visitante.escudo }} style={styles.headerEscudoImg} />
           </View>
           <View style={styles.headerLegendaView}>
@@ -58,6 +58,7 @@ class JogoDetalhe extends Component {
                 .toUpperCase()}
             </Text>
             {trans.rodada_num ? <Text style={styles.headerLegendaTxt}>{trans.rodada_num}ª RODADA</Text> : null}
+            <Text style={styles.headerLegendaTxt}>{detalhes.hora}</Text>
           </View>
         </View>
       );
@@ -116,8 +117,8 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps(state) {
-  const { detalhe, mensagens, refresh } = state.jogosReducer;
-  return { detalhe, mensagens, refresh };
+  const { detalhe, mensagens, refresh, gols } = state.jogosReducer;
+  return { detalhe, mensagens, refresh, gols };
 }
 
 export default connect(mapStateToProps, actions)(JogoDetalhe);

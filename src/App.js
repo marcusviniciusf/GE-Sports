@@ -7,10 +7,12 @@ import Router from './Router';
 // Store
 import store from './store';
 
-const App = () => (
-  <Provider store={store}>
-    <Router />
-  </Provider>
-);
+const App = () => {
+  return (
+    <Provider store={store}>
+      <Router />
+    </Provider>
+  );
+}
 
 export default App;

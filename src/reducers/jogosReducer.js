@@ -8,12 +8,14 @@ import {
   FETCH_JOGOS_COMMIT,
   FETCH_JOGOS_ROLLBACK
 } from '../actions/types';
+import { filterMensagens } from '../util';
 
 const INI = {
   detalhe: [],
   mensagens: [],
   jogos: [],
   campeonatos: [],
+  gols: { mandante: 0, visitante: 0 },
   refresh: false,
   modalOpen: false,
   modalTipo: 1,
@@ -25,7 +27,7 @@ const INI = {
 }
 
 export default (state = INI, action) => {
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case SET_REFRESH:
       return { ...state, refresh: true };
@@ -35,16 +37,21 @@ export default (state = INI, action) => {
       return { ...state, modalOpen: action.payload.flag, modalTipo: action.payload.tipo };
     case 'Offline/STATUS_CHANGED':
       return { ...state, networkStatus: action.payload.online };
+      // case FETCH_JOGOS_ROLLBACK:
+      //   return { ...state, jogos: action.payload, campeonatos: action.campeonatos, refresh: false };
     case FETCH_JOGOS:
       return { ...state, jogos: action.payload, campeonatos: action.campeonatos, refresh: false };
     case FETCH_JOGOS_COMMIT:
-      return { ...state, jogos: action.payload, campeonatos: action.campeonatos, refresh: false };
-    case FETCH_JOGOS_ROLLBACK:
-      return { ...state, jogos: action.payload, campeonatos: action.campeonatos, refresh: false };
+      return omit(state);
     case FETCH_DETAIL:
       return { ...state, detalhe: action.payload };
     case FETCH_MENSAGENS: 
-      return { ...state, mensagens: action.payload.reverse(), refresh: false };
+      return { 
+        ...state, 
+        mensagens: filterMensagens(1, action.payload.reverse()), 
+        gols: filterMensagens(2, action.payload.reverse()), 
+        refresh: false 
+    };
     default:
       return state;
   }

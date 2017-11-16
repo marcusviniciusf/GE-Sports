@@ -46,29 +46,29 @@ const ModalComponent = props => {
         </View>
       </Modal>
     );
-  } else {
-    return (
-      <Modal
-        style={[styles.modalView, { height: 100, padding: 15 }]}
-        onClosed={() => openCloseModal({ flag: false, tipo: 2 })}
-        isOpen={modalOpen}
-        position={'center'}
-        backdropPressToClose
-      >
-        <View>
-          <View style={[styles.filterView]}>
-            <Text>Somente com Wi-Fi disponivel?</Text>
-            <Switch value={wifiState} onValueChange={e => setWifi(e)} />
-          </View>
-          <TouchableHighlight onPress={() => openCloseModal({ flag: false, tipo: 2 })} underlayColor={'transparent'}>
-            <View style={styles.buttonVoltar}>
-              <Text style={styles.buttonVoltarTxt}>VOLTAR</Text>
-            </View>
-          </TouchableHighlight>
+  } 
+  return (
+    <Modal
+      style={[styles.modalView, { height: 100, padding: 15 }]}
+      onClosed={() => openCloseModal({ flag: false, tipo: 2 })}
+      isOpen={modalOpen}
+      position={'center'}
+      backdropPressToClose
+    >
+      <View>
+        <View style={[styles.filterView]}>
+          <Text>Somente com Wi-Fi disponivel?</Text>
+          <Switch value={wifiState} onValueChange={e => setWifi(e)} />
         </View>
-      </Modal>
-    );
-  }
+        <TouchableHighlight onPress={() => openCloseModal({ flag: false, tipo: 2 })} underlayColor={'transparent'}>
+          <View style={styles.buttonVoltar}>
+            <Text style={styles.buttonVoltarTxt}>VOLTAR</Text>
+          </View>
+        </TouchableHighlight>
+      </View>
+    </Modal>
+  );
+  
 };
 
 const styles = StyleSheet.create({
@@ -99,4 +99,4 @@ function mapStateToProps({ jogosReducer }) {
   return { filters, campeonatos, modalOpen, modalTipo };
 }
 
-export default connect(mapStateToProps, null)(ModalComponent);
+export default connect(mapStateToProps, {})(ModalComponent);

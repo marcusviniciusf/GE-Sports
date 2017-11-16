@@ -1,0 +1,162 @@
+[
+  {
+    "operacao": "INCLUSAO",
+    "url_thumb_grande": null,
+    "total_mensagens": 1,
+    "tipo": "LANCE",
+    "url_thumb_pequeno": null,
+    "periodo_sigla": "atr",
+    "periodo": "Pré-Jogo",
+    "url_thumb_medio": null,
+    "video_id": "",
+    "periodo_id": 1,
+    "texto": "<p> Muito boa noite, pessoal. Sejam bem-vindos ao nosso acompanhamento em tempo real de Corinthians x Fluminense. O jogo pode definir o Tim&atilde;o como campe&atilde;o brasileiro de 2017. Ser&aacute; que &eacute; hoje?</p> ",
+    "time": "",
+    "nome_time": "",
+    "momento": "",
+    "foto_credito": "",
+    "jogo": {
+      "equipe_visitante": {
+        "id": 266,
+        "nome": "Fluminense"
+      },
+      "equipe_mandante": {
+        "id": 264,
+        "nome": "Corinthians"
+      }
+    },
+    "titulo": "É noite de título?",
+    "foto_url": "",
+    "id": 2129290,
+    "foto_titulo": "",
+    "video_multicamera": false
+  },
+  {
+    "operacao": "INCLUSAO",
+    "url_thumb_grande": null,
+    "total_mensagens": 2,
+    "tipo": "LANCE",
+    "url_thumb_pequeno": null,
+    "periodo_sigla": "atr",
+    "periodo": "Pré-Jogo",
+    "url_thumb_medio": null,
+    "video_id": "",
+    "periodo_id": 1,
+    "texto": "<p> ... o Corinthians precisa vencer o jogo, at&eacute; porque o Gr&ecirc;mio est&aacute; batendo o S&atilde;o Paulo por 1 a 0 em Porto Alegre. &Eacute; jog&atilde;o na arena de Itaquera.</p> ",
+    "id": 2129294,
+    "nome_time": "",
+    "momento": "",
+    "foto_credito": "",
+    "jogo": {
+      "equipe_visitante": {
+        "id": 266,
+        "nome": "Fluminense"
+      },
+      "equipe_mandante": {
+        "id": 264,
+        "nome": "Corinthians"
+      }
+    },
+    "titulo": "Para ser campeão...",
+    "foto_url": "",
+    "time": "",
+    "foto_titulo": "",
+    "video_multicamera": false
+  },
+  {
+    "operacao": "INCLUSAO",
+    "url_thumb_grande": null,
+    "total_mensagens": 3,
+    "tipo": "LANCE",
+    "url_thumb_pequeno": null,
+    "periodo_sigla": "atr",
+    "periodo": "Pré-Jogo",
+    "url_thumb_medio": null,
+    "video_id": "",
+    "periodo_id": 1,
+    "texto": "<p> Est&aacute; assim a Arena!</p> ",
+    "jogo": {
+      "equipe_visitante": {
+        "id": 266,
+        "nome": "Fluminense"
+      },
+      "equipe_mandante": {
+        "id": 264,
+        "nome": "Corinthians"
+      }
+    },
+    "nome_time": "",
+    "momento": "",
+    "foto_credito": "Marcos Ribolli",
+    "time": "",
+    "titulo": "Olha o clima na Arena",
+    "foto_url": "http://s2.glbimg.com/ohhLCQ2-g6nYWoB2UD5kLgobj3g=/0x194:3200x1994/640x360/s.glbimg.com/es/ge/f/original/2017/11/15/rib1748.jpg",
+    "id": 2129297,
+    "foto_titulo": "Torcida na Arena Corinthians",
+    "video_multicamera": false
+  },
+  {
+    "operacao": "INCLUSAO",
+    "url_thumb_grande": null,
+    "total_mensagens": 4,
+    "tipo": "LANCE",
+    "url_thumb_pequeno": null,
+    "periodo_sigla": "atr",
+    "periodo": "Pré-Jogo",
+    "url_thumb_medio": null,
+    "video_id": "",
+    "periodo_id": 1,
+    "texto": "<p> O Corinthians joga pelo t&iacute;tulo, mas antes &eacute; preciso superar um advers&aacute;rio forte. Tem camisa pesada do outro lado. O Fluminense entra na rodada precisando de pontos para se afastar um pouco mais da zona de rebaixamento. Tem 43 pontos, na 14&ordf; coloca&ccedil;&atilde;o. O Z-4 &eacute; aberto pela Ponte, com 39.</p> ",
+    "time": "",
+    "nome_time": "",
+    "momento": "",
+    "foto_credito": "",
+    "jogo": {
+      "equipe_visitante": {
+        "id": 266,
+        "nome": "Fluminense"
+      },
+      "equipe_mandante": {
+        "id": 264,
+        "nome": "Corinthians"
+      }
+    },
+    "titulo": "E o Flu?",
+    "foto_url": "",
+    "id": 2129307,
+    "foto_titulo": "",
+    "video_multicamera": false
+  },
+  {
+    "operacao": "INCLUSAO",
+    "url_thumb_grande": null,
+    "total_mensagens": 5,
+    "tipo": "LANCE",
+    "url_thumb_pequeno": null,
+    "periodo_sigla": "atr",
+    "periodo": "Pré-Jogo",
+    "url_thumb_medio": null,
+    "video_id": "",
+    "periodo_id": 1,
+    "texto": "<p> O Corinthians est&aacute; escalado! C&aacute;ssio come&ccedil;a no banco.</p> ",
+    "id": 2129311,
+    "nome_time": "",
+    "momento": "",
+    "foto_credito": "",
+    "jogo": {
+      "equipe_visitante": {
+        "id": 266,
+        "nome": "Fluminense"
+      },
+      "equipe_mandante": {
+        "id": 264,
+        "nome": "Corinthians"
+      }
+    },
+    "titulo": "",
+    "foto_url": "",
+    "time": "",
+    "foto_titulo": "",
+    "video_multicamera": false
+  }
+]

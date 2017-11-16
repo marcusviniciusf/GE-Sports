@@ -1,0 +1,173 @@
+{
+  "data_hoje": "15/11/2017",
+  "jogos": [
+    {
+      "transmissao_id": 25545,
+      "status": "Em Andamento",
+      "fase_rodada": "35ª rodada",
+      "dia_semana": "Qua",
+      "time_casa": {
+        "penalti": null,
+        "placar": 0,
+        "sigla": "COR",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/corinthians_30x30.png",
+        "nome": "Corinthians"
+      },
+      "video_ao_vivo": "",
+      "tipo_transmissao": "lance_a_lance",
+      "hora": "21:45",
+      "nome_campeonato": "Campeonato Brasileiro",
+      "url": "http://globoesporte.globo.com/sp/futebol/brasileirao-serie-a/jogo/15-11-2017/corinthians-fluminense",
+      "time_visitante": {
+        "penalti": null,
+        "placar": 0,
+        "sigla": "FLU",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/fluminense_30x30.png",
+        "nome": "Fluminense"
+      },
+      "localizacao": "Arena Corinthians",
+      "data": "15/11/2017",
+      "id": 211232
+    },
+    {
+      "transmissao_id": 25542,
+      "status": "Em Andamento",
+      "fase_rodada": "35ª rodada",
+      "dia_semana": "Qua",
+      "time_casa": {
+        "penalti": null,
+        "placar": 0,
+        "sigla": "VAS",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/vasco_30x30.png",
+        "nome": "Vasco"
+      },
+      "video_ao_vivo": "",
+      "tipo_transmissao": "lance_a_lance",
+      "hora": "21:45",
+      "nome_campeonato": "Campeonato Brasileiro",
+      "url": "http://globoesporte.globo.com/rj/futebol/brasileirao-serie-a/jogo/15-11-2017/vasco-atletico-mg",
+      "time_visitante": {
+        "penalti": null,
+        "placar": 0,
+        "sigla": "CAM",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/atletico_mg_30x30.png",
+        "nome": "Atlético-MG"
+      },
+      "localizacao": "São Januário",
+      "data": "15/11/2017",
+      "id": 211230
+    },
+    {
+      "transmissao_id": 25548,
+      "status": "Em Andamento",
+      "fase_rodada": "35ª rodada",
+      "dia_semana": "Qua",
+      "time_casa": {
+        "penalti": 0,
+        "placar": 1,
+        "sigla": "GRE",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/gremio_30x30.png",
+        "nome": "Grêmio"
+      },
+      "video_ao_vivo": "",
+      "tipo_transmissao": "lance_a_lance",
+      "hora": "19:30",
+      "nome_campeonato": "Campeonato Brasileiro",
+      "url": "http://globoesporte.globo.com/rs/futebol/brasileirao-serie-a/jogo/15-11-2017/gremio-sao-paulo",
+      "time_visitante": {
+        "penalti": 0,
+        "placar": 0,
+        "sigla": "SAO",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/sao_paulo_30x30.png",
+        "nome": "São Paulo"
+      },
+      "localizacao": "Arena do Grêmio",
+      "data": "15/11/2017",
+      "id": 211235
+    },
+    {
+      "transmissao_id": 25526,
+      "status": "Em Andamento",
+      "fase_rodada": "35ª rodada",
+      "dia_semana": "Qua",
+      "time_casa": {
+        "penalti": 0,
+        "placar": 1,
+        "sigla": "CRU",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/cruzeiro_30x30.png",
+        "nome": "Cruzeiro"
+      },
+      "video_ao_vivo": "",
+      "tipo_transmissao": "lance_a_lance",
+      "hora": "19:30",
+      "nome_campeonato": "Campeonato Brasileiro",
+      "url": "http://globoesporte.globo.com/mg/futebol/brasileirao-serie-a/jogo/15-11-2017/cruzeiro-avai",
+      "time_visitante": {
+        "penalti": 0,
+        "placar": 1,
+        "sigla": "AVA",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/avai_30x30.png",
+        "nome": "Avaí"
+      },
+      "localizacao": "Mineirão",
+      "data": "15/11/2017",
+      "id": 211233
+    },
+    {
+      "transmissao_id": 25535,
+      "status": "Encerrada",
+      "fase_rodada": "35ª rodada",
+      "dia_semana": "Qua",
+      "time_casa": {
+        "penalti": 0,
+        "placar": 2,
+        "sigla": "PON",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/ponte_preta_30x30.png",
+        "nome": "Ponte Preta"
+      },
+      "video_ao_vivo": "",
+      "tipo_transmissao": "lance_a_lance",
+      "hora": "17:00",
+      "nome_campeonato": "Campeonato Brasileiro",
+      "url": "http://globoesporte.globo.com/sp/campinas-e-regiao/futebol/brasileirao-serie-a/jogo/15-11-2017/ponte-preta-atletico-pr",
+      "time_visitante": {
+        "penalti": 0,
+        "placar": 1,
+        "sigla": "CAP",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2014/04/14/atletico_pr_30x30.png",
+        "nome": "Atlético-PR"
+      },
+      "localizacao": "Moisés Lucarelli",
+      "data": "15/11/2017",
+      "id": 211237
+    },
+    {
+      "transmissao_id": 25533,
+      "status": "Encerrada",
+      "fase_rodada": "Fase final",
+      "dia_semana": "Qua",
+      "time_casa": {
+        "penalti": 0,
+        "placar": 3,
+        "sigla": "AUS",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2017/06/12/Australia-30.png",
+        "nome": "Austrália"
+      },
+      "video_ao_vivo": "",
+      "tipo_transmissao": "lance_a_lance",
+      "hora": "07:00",
+      "nome_campeonato": "Eliminatórias da Copa - Repescagem mundial",
+      "url": "http://globoesporte.globo.com/futebol/futebol-internacional/jogo/15-11-2017/australia-honduras",
+      "time_visitante": {
+        "penalti": 0,
+        "placar": 1,
+        "sigla": "HON",
+        "escudo": "http://s.glbimg.com//es/sde/f/organizacoes/2016/05/11/Honduras_30.png",
+        "nome": "Honduras"
+      },
+      "localizacao": "Sydney",
+      "data": "15/11/2017",
+      "id": 218338
+    }
+  ]
+}

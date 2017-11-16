@@ -25,7 +25,7 @@ export const fetchJogos = () => async dispatch => {
       offline: {
         effect: { url: URL, method: 'GET' },
         commit: { type: FETCH_JOGOS_COMMIT },
-        rollback: { type: FETCH_JOGOS_ROLLBACK },
+        // rollback: { type: FETCH_JOGOS_ROLLBACK },
       }
     }
   });

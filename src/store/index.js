@@ -9,8 +9,14 @@ const store = createStore(
   {},
   compose(
     applyMiddleware(reduxThunk),
-    offline(offlineConfig)
+    offline(config)
   )
 );
+
+const config = {
+  ...offlineConfig
+}
+
+// console.log(config);
 
 export default store;

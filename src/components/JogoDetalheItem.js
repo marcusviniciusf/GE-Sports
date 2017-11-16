@@ -36,6 +36,11 @@ const JogoDetalheItem = ({ item, detalhesJogo, tipo }) => {
     if (variable) { return variable; }
     return undefined;
   }
+  const verifyGolContra = () => {
+    if (item.gol.contra) {
+
+    }
+  }
   const { operacao, nome_time, gol, jogo, periodo, momento, substituicao, cartao } = item;
   switch (tipo) {
     case 1:
@@ -51,7 +56,7 @@ const JogoDetalheItem = ({ item, detalhesJogo, tipo }) => {
           </View>
           <View style={styles.golViewContent}>
             <Text style={styles.golTxt}>
-              GOOL DO(A) {nome_time.toUpperCase()}!!
+              {gol.contra ? 'GOL CONTRA DA(O)' : 'GOOL DO(A)'} {nome_time.toUpperCase()}!!
             </Text>
           </View>
         </HeaderItem>
@@ -136,7 +141,7 @@ const styles = StyleSheet.create({
   golNomeJogador: { fontSize: 14, fontWeight: 'bold' },
   golPosicaoJogador: { fontSize: 12, fontWeight: '200' },
   golViewContent: { alignItems: 'center', flex: 1 },
-  golTxt: { fontSize: 18, fontWeight: 'bold'},
+  golTxt: { fontSize: 18, fontWeight: 'bold', textAlign: 'center' },
   substituicaoView: {
     flex: 1, 
     borderBottomWidth: 1, 
