@@ -40,7 +40,7 @@ export const goDetail = jogo => async dispatch => {
   const req = await axios.get(jogo.url + '/transmissao.json');
   dispatch({ type: FETCH_DETAIL, payload: req.data });
   const { time_casa, time_visitante } = jogo;
-  Actions.jogoDetalhe({ detalhesJogo: jogo, title: time_casa.nome + ' x ' + time_visitante.nome });
+  Actions.jogoDetalhe({ detalhesJogo: jogo, title: time_casa.nome + ' x ' + time_visitante.nome, type: 'reset' });
 }
 
 export const openModal = option => dispatch => {
